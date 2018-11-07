@@ -30,7 +30,7 @@
   </parent>
 
   <artifactId>maven-jar-plugin</artifactId>
-  <version>3.1.3-SNAPSHOT</version>
+  <version>3.1.2-nexia1</version>
   <packaging>maven-plugin</packaging>
 
   <name>Apache Maven JAR Plugin</name>
@@ -68,15 +68,21 @@
     <url>https://builds.apache.org/job/maven-box/job/maven-jar-plugin/</url>
   </ciManagement>
   <distributionManagement>
-    <site>
-      <id>apache.website</id>
-      <url>scm:svn:https://svn.apache.org/repos/asf/maven/website/components/${maven.site.path}</url>
-    </site>
+    <repository>
+      <id>central</id>
+      <name>artifactory.nexiabuild.com-releases</name>
+      <url>https://artifactory.nexiabuild.com/artifactory/libs-release-local</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>artifactory.nexiabuild.com-snapshots</name>
+      <url>https://artifactory.nexiabuild.com/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
   </distributionManagement>
 
   <properties>
     <mavenFileManagementVersion>3.0.0</mavenFileManagementVersion>
-    <mavenArchiverVersion>3.4.0</mavenArchiverVersion>
+    <mavenArchiverVersion>3.4.0-nexia1</mavenArchiverVersion>
     <mavenVersion>3.0</mavenVersion>
     <javaVersion>7</javaVersion>
   </properties>
